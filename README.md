@@ -18,11 +18,11 @@ I'm a junior DevOps engineer with some expertise in BackEnd development using Ja
 [![portfolio](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RecursiveDeveloper)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jhoan-jesus-ortiz-sandoval-a66152198/)
 
-# Packer with Terraform
+# Packer, Ansible with Terraform
 
-Set up your own CI workflow using Packer to build an AWS AMI with a preconfigured Nodejs app behind a reverse proxy served by an Nginx server. And then deploy an EC2 instance using Terraform, based on the image you previously built.
+Set up your own CI workflow using Packer to build an AWS AMI with a preconfigured Nodejs app behind a reverse proxy served by an Nginx server. The provisioning and configuration of the AMI is handled by Ansible, ensuring a reproducible and automated setup. Terraform is used to provision and manage the AWS infrastructure where the AMI will be deployed.
 
-![image](https://raw.githubusercontent.com/RecursiveDeveloper/static-media-content/refs/heads/main/Packer_Terraform_workflow.png)
+![image](https://raw.githubusercontent.com/RecursiveDeveloper/static-media-content/refs/heads/main/Packer_Ansible_Terraform_workflow.png)
 
 ## Tech Stack 
 
@@ -30,13 +30,14 @@ Set up your own CI workflow using Packer to build an AWS AMI with a preconfigure
 - **Server:** NodeJs, Nginx
 - **Database:** ---
 - **Cloud provider:** AWS
-- **Tools:** Packer, Terraform
+- **Tools:** Packer, Terraform, Ansible
 
 ## Installation
 
 1. Install Packer according to your O.S [Install Packer](https://developer.hashicorp.com/packer/install)
 2. Install Terraform according to your O.S [Install Terraform](https://developer.hashicorp.com/terraform/install)
-3. Setup your AWS credentials according to your O.S and preference (recommended by credential file) [Configuring settings for the AWS CLI](https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-configure.html)
+3. Install Ansible according to your O.S [Install Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
+4. Setup your AWS credentials according to your O.S and preference (recommended by credential file) [Configuring settings for the AWS CLI](https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-configure.html)
 
 ## Deployment
 
