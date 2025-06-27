@@ -1,0 +1,35 @@
+---
+- hosts: all
+  become: true
+  name: Install Nginx as a reverse proxy for Node.js application
+  tasks:
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Start Nginx service
+      service:
+        name: nginx
+        state: started
+        enabled: true
+
+    - name: Ensure Nginx is running
+      wait_for:
+        port: 80
+        delay: 10
+        timeout: 30
+    
+    - name: copy Nginx configuration file
+      copy:
+        src: nginx/nginx.conf
+        dest: /etc/nginx/sites-available/default
+    
+    - name: test Nginx configuration
+      command: nginx -t
+      ignore_errors: false
+
+    - name: restart Nginx to apply configuration changes
+      service:
+        name: nginx
+        state: restarted

@@ -1,0 +1,42 @@
+
+- hosts: all
+  become: true
+  name: Install Node.js and PM2 for Node.js application management
+  tasks:
+    - name: move to /opt directory
+      copy:
+        src: nodejs/index.js
+        dest: /opt/index.js
+
+    - name: Install Node.js
+      apt:
+        name: nodejs
+        state: present
+        update_cache: yes
+
+    - name: Install npm
+      apt:
+        name: npm
+        state: present
+        update_cache: yes
+
+    - name: Install PM2 globally
+      npm:
+        name: pm2
+        state: present
+        global: yes
+
+    - name: Start Node.js application with PM2
+      become: true
+      become_user: ubuntu
+      shell: pm2 start /opt/index.js --name myapp
+
+    - name: Generate PM2 startup script for systemd
+      become: true
+      become_user: ubuntu
+      shell: sudo env PATH=$PATH:/usr/bin pm2 startup systemd -u ubuntu --hp /home/ubuntu
+
+    - name: Save PM2 process list
+      become: true
+      become_user: ubuntu
+      shell: pm2 save
