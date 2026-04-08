@@ -22,7 +22,7 @@ I'm a junior DevOps engineer with some expertise in BackEnd development using Ja
 
 Set up your own CI workflow using Packer to build an AWS AMI with a preconfigured Nodejs app behind a reverse proxy served by an Nginx server. The provisioning and configuration of the AMI is handled by Ansible, ensuring a reproducible and automated setup. Terraform is used to provision and manage the AWS infrastructure where the AMI will be deployed.
 
-![image](https://raw.githubusercontent.com/RecursiveDeveloper/static-media-content/refs/heads/main/Packer_Ansible_Terraform_workflow.png)
+![image](https://raw.githubusercontent.com/RecursiveDeveloper/static-media-content/refs/heads/main/Packer_Ansible_Terraform-Diagram.png)
 
 ## Tech Stack 
 
